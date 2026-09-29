@@ -1,0 +1,1605 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <!-- Responsive viewport -->
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    >
+
+    <meta
+        name="description"
+        content="SHUBH DODIYA CREATION — Web apps and projects created by Shubh Dodiya."
+    >
+
+    <title>SHUBH DODIYA CREATION</title>
+
+    <style>
+
+        /* =====================================================
+           GLOBAL
+        ===================================================== */
+
+        :root {
+            --bg: #050505;
+            --card: #0b0b0b;
+            --card-light: #111111;
+            --border: #242424;
+            --border-light: #444;
+            --text: #ffffff;
+            --muted: #888;
+            --muted-dark: #555;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 80px;
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+
+            min-height: 100vh;
+
+            overflow-x: hidden;
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            -webkit-font-smoothing: antialiased;
+            text-rendering: optimizeLegibility;
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+        a {
+            -webkit-tap-highlight-color: transparent;
+        }
+
+
+        /* =====================================================
+           NAVIGATION
+        ===================================================== */
+
+        nav {
+            width: 100%;
+            min-height: 72px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding:
+                12px
+                clamp(18px, 5vw, 70px);
+
+            background: rgba(5, 5, 5, 0.88);
+
+            border-bottom: 1px solid #202020;
+
+            position: sticky;
+            top: 0;
+
+            z-index: 1000;
+
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+        }
+
+        .logo {
+            color: white;
+
+            font-size: clamp(14px, 1.5vw, 21px);
+
+            font-weight: 700;
+
+            letter-spacing: clamp(1px, 0.25vw, 3px);
+
+            white-space: nowrap;
+        }
+
+        .nav-links {
+            list-style: none;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: clamp(14px, 3vw, 35px);
+        }
+
+        .nav-links a {
+            color: #888;
+
+            text-decoration: none;
+
+            font-size: clamp(10px, 1.1vw, 15px);
+
+            letter-spacing: 1px;
+
+            transition: 0.3s ease;
+
+            white-space: nowrap;
+        }
+
+        .nav-links a:hover {
+            color: white;
+        }
+
+
+        /* =====================================================
+           HERO
+        ===================================================== */
+
+        .hero {
+            width: 100%;
+            min-height: calc(100vh - 72px);
+
+            min-height: calc(100svh - 72px);
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: center;
+
+            justify-content: center;
+
+            text-align: center;
+
+            padding:
+                clamp(60px, 10vh, 140px)
+                clamp(20px, 6vw, 100px);
+        }
+
+        .hero h1 {
+            width: 100%;
+
+            font-size:
+                clamp(
+                    34px,
+                    7vw,
+                    96px
+                );
+
+            line-height: 1.05;
+
+            letter-spacing:
+                clamp(
+                    2px,
+                    0.6vw,
+                    8px
+                );
+
+            font-weight: 700;
+
+            animation: fadeUp 1s ease;
+        }
+
+        .hero h1 span {
+            color: #777;
+        }
+
+        .hero p {
+            width: min(700px, 90%);
+
+            margin-top: clamp(20px, 3vw, 30px);
+
+            color: #888;
+
+            font-size:
+                clamp(
+                    14px,
+                    1.5vw,
+                    20px
+                );
+
+            line-height: 1.8;
+
+            animation: fadeUp 1.3s ease;
+        }
+
+        .hero-button {
+            margin-top: clamp(25px, 4vw, 40px);
+
+            padding:
+                clamp(12px, 1.5vw, 16px)
+                clamp(20px, 3vw, 32px);
+
+            border: 1px solid #444;
+
+            border-radius: 50px;
+
+            color: white;
+
+            text-decoration: none;
+
+            font-size:
+                clamp(12px, 1.2vw, 15px);
+
+            transition: 0.3s ease;
+
+            animation: fadeUp 1.6s ease;
+        }
+
+        .hero-button:hover {
+            background: white;
+
+            color: black;
+
+            transform: translateY(-4px);
+        }
+
+        .hero-button:active {
+            transform: scale(0.96);
+        }
+
+
+        /* =====================================================
+           PROJECT SECTION
+        ===================================================== */
+
+        .projects {
+            width: 100%;
+
+            min-height: 100vh;
+
+            padding:
+                clamp(70px, 10vw, 150px)
+                clamp(18px, 5vw, 80px);
+        }
+
+        .section-title {
+            text-align: center;
+
+            font-size:
+                clamp(
+                    30px,
+                    5vw,
+                    60px
+                );
+
+            letter-spacing:
+                clamp(
+                    1px,
+                    0.4vw,
+                    5px
+                );
+
+            line-height: 1.1;
+        }
+
+        .section-description {
+            width: min(700px, 90%);
+
+            margin:
+                clamp(16px, 2vw, 25px)
+                auto
+                clamp(40px, 6vw, 70px);
+
+            text-align: center;
+
+            color: #777;
+
+            font-size:
+                clamp(
+                    13px,
+                    1.4vw,
+                    17px
+                );
+
+            line-height: 1.8;
+        }
+
+        .project-grid {
+            width: min(1400px, 100%);
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(
+                    2,
+                    minmax(0, 1fr)
+                );
+
+            gap:
+                clamp(
+                    18px,
+                    3vw,
+                    35px
+                );
+        }
+
+        .project-card {
+            position: relative;
+
+            min-width: 0;
+
+            background: var(--card);
+
+            border: 1px solid var(--border);
+
+            border-radius:
+                clamp(
+                    16px,
+                    2vw,
+                    24px
+                );
+
+            padding:
+                clamp(
+                    22px,
+                    3vw,
+                    40px
+                );
+
+            overflow: hidden;
+
+            transition:
+                transform 0.45s ease,
+                border-color 0.45s ease,
+                box-shadow 0.45s ease;
+        }
+
+        .project-card::before {
+            content: "";
+
+            position: absolute;
+
+            width:
+                clamp(
+                    130px,
+                    15vw,
+                    220px
+                );
+
+            height:
+                clamp(
+                    130px,
+                    15vw,
+                    220px
+                );
+
+            border-radius: 50%;
+
+            background: rgba(255, 255, 255, 0.035);
+
+            top: -70px;
+
+            right: -70px;
+
+            transition: 0.5s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+
+            border-color: #555;
+
+            box-shadow:
+                0 25px 70px rgba(0, 0, 0, 0.7);
+        }
+
+        .project-card:hover::before {
+            transform: scale(1.7);
+        }
+
+        .project-number {
+            color: #555;
+
+            font-size:
+                clamp(
+                    10px,
+                    1vw,
+                    13px
+                );
+
+            letter-spacing:
+                clamp(
+                    2px,
+                    0.3vw,
+                    4px
+                );
+
+            margin-bottom:
+                clamp(
+                    16px,
+                    2vw,
+                    24px
+                );
+        }
+
+        .project-icon {
+            width:
+                clamp(
+                    55px,
+                    6vw,
+                    72px
+                );
+
+            height:
+                clamp(
+                    55px,
+                    6vw,
+                    72px
+                );
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            border-radius:
+                clamp(
+                    14px,
+                    1.5vw,
+                    20px
+                );
+
+            background: #151515;
+
+            border: 1px solid #292929;
+
+            font-size:
+                clamp(
+                    25px,
+                    3vw,
+                    35px
+                );
+
+            margin-bottom:
+                clamp(
+                    18px,
+                    2vw,
+                    28px
+                );
+
+            transition: 0.4s;
+        }
+
+        .project-card:hover .project-icon {
+            transform:
+                rotate(-5deg)
+                scale(1.08);
+
+            border-color: #666;
+        }
+
+        .project-card h2 {
+            font-size:
+                clamp(
+                    22px,
+                    2.5vw,
+                    32px
+                );
+
+            margin-bottom:
+                clamp(
+                    10px,
+                    1.5vw,
+                    17px
+                );
+        }
+
+        .project-card p {
+            color: #888;
+
+            font-size:
+                clamp(
+                    13px,
+                    1.3vw,
+                    16px
+                );
+
+            line-height: 1.8;
+
+            margin-bottom:
+                clamp(
+                    16px,
+                    2vw,
+                    25px
+                );
+        }
+
+        .tags {
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 7px;
+
+            margin-bottom:
+                clamp(
+                    20px,
+                    2.5vw,
+                    30px
+                );
+        }
+
+        .tag {
+            padding:
+                6px
+                11px;
+
+            border: 1px solid #333;
+
+            border-radius: 50px;
+
+            background: #111;
+
+            color: #999;
+
+            font-size:
+                clamp(
+                    10px,
+                    1vw,
+                    13px
+                );
+
+            transition: 0.3s;
+        }
+
+        .tag:hover {
+            color: white;
+
+            border-color: #666;
+        }
+
+        .view-button {
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 8px;
+
+            padding:
+                11px
+                18px;
+
+            border-radius: 50px;
+
+            border: 1px solid #444;
+
+            color: white;
+
+            text-decoration: none;
+
+            font-size:
+                clamp(
+                    12px,
+                    1.1vw,
+                    15px
+                );
+
+            transition: 0.3s;
+        }
+
+        .view-button:hover {
+            background: white;
+
+            color: black;
+
+            transform: translateX(5px);
+        }
+
+        .view-button:active {
+            transform: scale(0.95);
+        }
+
+
+        /* =====================================================
+           DEVELOPER SECTION
+        ===================================================== */
+
+        .developer {
+            width: 100%;
+
+            min-height: 90vh;
+
+            min-height: 90svh;
+
+            padding:
+                clamp(80px, 10vw, 150px)
+                20px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: center;
+
+            justify-content: center;
+
+            text-align: center;
+
+            border-top: 1px solid #181818;
+
+            position: relative;
+
+            overflow: hidden;
+        }
+
+        .developer::before {
+            content: "";
+
+            position: absolute;
+
+            width:
+                clamp(
+                    300px,
+                    55vw,
+                    700px
+                );
+
+            height:
+                clamp(
+                    300px,
+                    55vw,
+                    700px
+                );
+
+            border-radius: 50%;
+
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(255,255,255,0.08),
+                    transparent 65%
+                );
+
+            top: 50%;
+            left: 50%;
+
+            transform:
+                translate(-50%, -50%);
+
+            pointer-events: none;
+        }
+
+        .developer-label {
+            color: #666;
+
+            font-size:
+                clamp(
+                    10px,
+                    1vw,
+                    13px
+                );
+
+            letter-spacing:
+                clamp(
+                    3px,
+                    0.5vw,
+                    6px
+                );
+
+            margin-bottom: 20px;
+
+            position: relative;
+        }
+
+        .developer h2 {
+            font-size:
+                clamp(
+                    30px,
+                    5vw,
+                    65px
+                );
+
+            letter-spacing:
+                clamp(
+                    1px,
+                    0.4vw,
+                    5px
+                );
+
+            line-height: 1.1;
+
+            margin-bottom:
+                clamp(
+                    40px,
+                    5vw,
+                    60px
+                );
+
+            position: relative;
+        }
+
+        /* ================= DEVELOPER IMAGE ================= */
+
+        .developer-image-wrapper {
+            width:
+                clamp(
+                    170px,
+                    24vw,
+                    310px
+                );
+
+            height:
+                clamp(
+                    170px,
+                    24vw,
+                    310px
+                );
+
+            padding:
+                clamp(
+                    4px,
+                    0.6vw,
+                    7px
+                );
+
+            border-radius: 50%;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #ffffff,
+                    #333,
+                    #ffffff,
+                    #222
+                );
+
+            background-size: 300% 300%;
+
+            animation:
+                developerGlow 5s ease infinite;
+
+            position: relative;
+
+            box-shadow:
+                0 0 35px rgba(255,255,255,0.08),
+                0 0 100px rgba(255,255,255,0.04);
+        }
+
+        .developer-image-wrapper::before {
+            content: "";
+
+            position: absolute;
+
+            inset: -12px;
+
+            border-radius: 50%;
+
+            border: 1px solid #333;
+
+            animation:
+                pulseRing 2.5s ease-in-out infinite;
+
+            pointer-events: none;
+        }
+
+        .developer-image {
+            width: 100%;
+            height: 100%;
+
+            display: block;
+
+            object-fit: cover;
+
+            border-radius: 50%;
+
+            border:
+                clamp(
+                    3px,
+                    0.5vw,
+                    5px
+                )
+                solid #050505;
+
+            transition: 0.5s;
+        }
+
+        .developer-image-wrapper:hover .developer-image {
+            transform: scale(1.04);
+        }
+
+        .developer-name {
+            margin-top:
+                clamp(
+                    28px,
+                    4vw,
+                    40px
+                );
+
+            font-size:
+                clamp(
+                    23px,
+                    3vw,
+                    38px
+                );
+
+            font-weight: bold;
+
+            letter-spacing:
+                clamp(
+                    1px,
+                    0.4vw,
+                    4px
+                );
+
+            position: relative;
+        }
+
+        .developer-role {
+            margin-top: 12px;
+
+            color: #888;
+
+            font-size:
+                clamp(
+                    12px,
+                    1.4vw,
+                    17px
+                );
+
+            letter-spacing: 1px;
+
+            position: relative;
+        }
+
+        .developer-tagline {
+            margin-top:
+                clamp(
+                    16px,
+                    2vw,
+                    24px
+                );
+
+            color: #aaa;
+
+            font-size:
+                clamp(
+                    15px,
+                    1.6vw,
+                    20px
+                );
+
+            font-style: italic;
+
+            position: relative;
+        }
+
+        .developer-line {
+            width:
+                clamp(
+                    50px,
+                    7vw,
+                    80px
+                );
+
+            height: 1px;
+
+            background: #444;
+
+            margin-top: 30px;
+
+            position: relative;
+        }
+
+
+        /* =====================================================
+           FOOTER
+        ===================================================== */
+
+        footer {
+            width: 100%;
+
+            padding:
+                clamp(25px, 4vw, 40px)
+                20px;
+
+            text-align: center;
+
+            border-top: 1px solid #222;
+
+            color: #666;
+
+            font-size:
+                clamp(
+                    11px,
+                    1.2vw,
+                    14px
+                );
+
+            line-height: 1.6;
+        }
+
+
+        /* =====================================================
+           ANIMATIONS
+        ===================================================== */
+
+        @keyframes fadeUp {
+
+            from {
+                opacity: 0;
+
+                transform:
+                    translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+
+                transform:
+                    translateY(0);
+            }
+        }
+
+        @keyframes developerGlow {
+
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        @keyframes pulseRing {
+
+            0% {
+                transform: scale(0.98);
+
+                opacity: 0.4;
+            }
+
+            50% {
+                transform: scale(1.05);
+
+                opacity: 0.9;
+            }
+
+            100% {
+                transform: scale(0.98);
+
+                opacity: 0.4;
+            }
+        }
+
+
+        /* =====================================================
+           TABLETS
+        ===================================================== */
+
+        @media (max-width: 900px) {
+
+            .project-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .project-card {
+                max-width: 700px;
+
+                width: 100%;
+
+                margin: auto;
+            }
+        }
+
+
+        /* =====================================================
+           MOBILE
+        ===================================================== */
+
+        @media (max-width: 600px) {
+
+            nav {
+                min-height: 64px;
+
+                padding:
+                    10px
+                    18px;
+            }
+
+            .nav-links {
+                gap: 12px;
+            }
+
+            .nav-links a {
+                font-size: 9px;
+
+                letter-spacing: 0;
+            }
+
+            .hero {
+                min-height:
+                    calc(100svh - 64px);
+
+                padding:
+                    50px
+                    18px;
+            }
+
+            .hero h1 {
+                line-height: 1.15;
+            }
+
+            .hero p {
+                width: 94%;
+            }
+
+            .projects {
+                padding:
+                    80px
+                    15px;
+            }
+
+            .project-card {
+                padding: 24px 20px;
+            }
+
+            .developer {
+                padding:
+                    90px
+                    15px;
+            }
+        }
+
+
+        /* =====================================================
+           VERY SMALL PHONES
+        ===================================================== */
+
+        @media (max-width: 380px) {
+
+            .logo {
+                font-size: 13px;
+            }
+
+            .nav-links {
+                gap: 8px;
+            }
+
+            .nav-links a {
+                font-size: 8px;
+            }
+
+            .hero h1 {
+                font-size: 31px;
+            }
+
+            .project-card {
+                padding: 20px 17px;
+            }
+
+            .developer-image-wrapper {
+                width: 165px;
+                height: 165px;
+            }
+        }
+
+
+        /* =====================================================
+           LARGE DESKTOP / SMARTBOARD
+        ===================================================== */
+
+        @media (min-width: 1600px) {
+
+            .project-grid {
+                max-width: 1500px;
+            }
+
+            .hero p {
+                max-width: 850px;
+            }
+
+            .projects {
+                padding-left: 7vw;
+                padding-right: 7vw;
+            }
+        }
+
+
+        /* =====================================================
+           VERY LARGE SCREENS / SMARTBOARDS
+        ===================================================== */
+
+        @media (min-width: 2200px) {
+
+            .logo {
+                font-size: 25px;
+            }
+
+            .nav-links a {
+                font-size: 18px;
+            }
+
+            .hero h1 {
+                font-size: 110px;
+            }
+
+            .hero p {
+                font-size: 24px;
+                max-width: 1000px;
+            }
+
+            .project-grid {
+                max-width: 1800px;
+            }
+
+            .project-card {
+                padding: 50px;
+            }
+
+            .project-card h2 {
+                font-size: 38px;
+            }
+
+            .project-card p {
+                font-size: 19px;
+            }
+
+            .developer-name {
+                font-size: 45px;
+            }
+        }
+
+
+        /* =====================================================
+           TOUCH DEVICES
+        ===================================================== */
+
+        @media (hover: none) {
+
+            .project-card:hover {
+                transform: none;
+
+                box-shadow: none;
+            }
+
+            .hero-button:hover {
+                background: transparent;
+
+                color: white;
+
+                transform: none;
+            }
+
+            .view-button:hover {
+                background: transparent;
+
+                color: white;
+
+                transform: none;
+            }
+
+            .developer-image-wrapper:hover .developer-image {
+                transform: none;
+            }
+        }
+
+
+        /* =====================================================
+           REDUCED MOTION
+        ===================================================== */
+
+        @media (prefers-reduced-motion: reduce) {
+
+            html {
+                scroll-behavior: auto;
+            }
+
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+
+                animation-iteration-count: 1 !important;
+
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         NAVBAR
+    ===================================================== -->
+
+    <nav>
+
+        <div class="logo">
+            SHUBH DODIYA
+        </div>
+
+        <ul class="nav-links">
+
+            <li>
+                <a href="#home">
+                    HOME
+                </a>
+            </li>
+
+            <li>
+                <a href="#projects">
+                    PROJECTS
+                </a>
+            </li>
+
+            <li>
+                <a href="#developer">
+                    DEVELOPER
+                </a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+
+    <!-- =====================================================
+         HERO
+    ===================================================== -->
+
+    <section
+        class="hero"
+        id="home"
+    >
+
+        <h1>
+            SHUBH DODIYA
+            <span>CREATION</span>
+        </h1>
+
+        <p>
+            Welcome to my portfolio. Here I showcase some of the
+            web applications and projects that I have created
+            while learning and experimenting with coding.
+        </p>
+
+        <a
+            href="#projects"
+            class="hero-button"
+        >
+            EXPLORE MY PROJECTS ↓
+        </a>
+
+    </section>
+
+
+    <!-- =====================================================
+         PROJECTS
+    ===================================================== -->
+
+    <section
+        class="projects"
+        id="projects"
+    >
+
+        <h2 class="section-title">
+            MY WEB APPS
+        </h2>
+
+        <p class="section-description">
+            These are some of the web applications I have created.
+            Each project helped me learn something new about
+            web development and programming.
+        </p>
+
+
+        <div class="project-grid">
+
+
+            <!-- PROJECT 01 -->
+
+            <div class="project-card">
+
+                <div class="project-number">
+                    PROJECT 01
+                </div>
+
+                <div class="project-icon">
+                    🤖
+                </div>
+
+                <h2>
+                    JARVIS AI
+                </h2>
+
+                <p>
+                    An AI assistant project created with HTML,
+                    CSS, JavaScript and Node.js. This was one of
+                    my larger experiments with AI and web development.
+                </p>
+
+                <div class="tags">
+
+                    <span class="tag">
+                        HTML
+                    </span>
+
+                    <span class="tag">
+                        CSS
+                    </span>
+
+                    <span class="tag">
+                        JavaScript
+                    </span>
+
+                    <span class="tag">
+                        Node.js
+                    </span>
+
+                    <span class="tag">
+                        AI
+                    </span>
+
+                </div>
+
+                <p>
+                    ⏱️ Development time:
+                    <strong>2 months</strong>
+                </p>
+
+                <a
+                    href="https://jarvis-public-ai.onrender.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="view-button"
+                >
+                    VIEW PROJECT →
+                </a>
+
+            </div>
+
+
+            <!-- PROJECT 02 -->
+
+            <div class="project-card">
+
+                <div class="project-number">
+                    PROJECT 02
+                </div>
+
+                <div class="project-icon">
+                    💬
+                </div>
+
+                <h2>
+                    Chat App
+                </h2>
+
+                <p>
+                    A web application created for chatting with
+                    friends. The project focuses on creating a
+                    simple online communication experience.
+                </p>
+
+                <div class="tags">
+
+                    <span class="tag">
+                        HTML
+                    </span>
+
+                    <span class="tag">
+                        CSS
+                    </span>
+
+                    <span class="tag">
+                        JavaScript
+                    </span>
+
+                    <span class="tag">
+                        Web App
+                    </span>
+
+                </div>
+
+                <a
+                    href="https://shubh-chat.netlify.app"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="view-button"
+                >
+                    VIEW PROJECT →
+                </a>
+
+            </div>
+
+
+            <!-- PROJECT 03 -->
+
+            <div class="project-card">
+
+                <div class="project-number">
+                    PROJECT 03
+                </div>
+
+                <div class="project-icon">
+                    📱
+                </div>
+
+                <h2>
+                    QR Generator
+                </h2>
+
+                <p>
+                    A simple web application that allows users
+                    to generate QR codes quickly through a
+                    browser-based interface.
+                </p>
+
+                <div class="tags">
+
+                    <span class="tag">
+                        HTML
+                    </span>
+
+                    <span class="tag">
+                        CSS
+                    </span>
+
+                    <span class="tag">
+                        JavaScript
+                    </span>
+
+                    <span class="tag">
+                        QR
+                    </span>
+
+                </div>
+
+                <a
+                    href="https://qr-s.netlify.app/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="view-button"
+                >
+                    VIEW PROJECT →
+                </a>
+
+            </div>
+
+
+            <!-- PROJECT 04 -->
+
+            <div class="project-card">
+
+                <div class="project-number">
+                    PROJECT 04
+                </div>
+
+                <div class="project-icon">
+                    🎧
+                </div>
+
+                <h2>
+                    DJ Web App
+                </h2>
+
+                <p>
+                    A browser-based DJ project created for
+                    playing music and experimenting with an
+                    interactive entertainment interface.
+                </p>
+
+                <div class="tags">
+
+                    <span class="tag">
+                        HTML
+                    </span>
+
+                    <span class="tag">
+                        CSS
+                    </span>
+
+                    <span class="tag">
+                        JavaScript
+                    </span>
+
+                    <span class="tag">
+                        Audio
+                    </span>
+
+                </div>
+
+                <a
+                    href="https://dj-s.netlify.app"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="view-button"
+                >
+                    VIEW PROJECT →
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         DEVELOPER
+    ===================================================== -->
+
+    <section
+        class="developer"
+        id="developer"
+    >
+
+        <div class="developer-label">
+            THE DEVELOPER
+        </div>
+
+        <h2>
+            BEHIND THE PROJECTS
+        </h2>
+
+
+        <!-- Developer Image -->
+
+        <div class="developer-image-wrapper">
+
+            <img
+                class="developer-image"
+                src="https://qjxcyjvclnriaqlbpile.supabase.co/storage/v1/object/public/image/ChatGPT%20Image%20Sep%2029,%202026,%2010_20_16%20PM.png"
+                alt="SHUBH DODIYA - Developer"
+                loading="lazy"
+            >
+
+        </div>
+
+
+        <div class="developer-name">
+            SHUBH DODIYA
+        </div>
+
+        <div class="developer-role">
+            DEVELOPER • CREATOR • CODER
+        </div>
+
+        <div class="developer-tagline">
+            "I love coding..."
+        </div>
+
+        <div class="developer-line"></div>
+
+    </section>
+
+
+    <!-- =====================================================
+         FOOTER
+    ===================================================== -->
+
+    <footer>
+
+        © SHUBH DODIYA CREATION
+
+    </footer>
+
+
+</body>
+</html>
+
